@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.1 http://maven.apache.org/xsd/assembly-1.1.1.xsd">
+
+    <id>distribution</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+        <fileSet>
+            <directory>src/main/content/jcr_root</directory>
+            <outputDirectory>jcr_root</outputDirectory>
+            <excludes>
+                <exclude>**/.vlt</exclude>
+            </excludes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/content/META-INF</directory>
+            <outputDirectory>META-INF</outputDirectory>
+            <filtered>true</filtered>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>jcr_root/apps/aem-utils-dependencie/install</outputDirectory>
+            <includes>
+                <include>*:jar:*</include>
+            </includes>
+            <excludes>
+                <exclude>com.fasterxml.jackson.core:*:jar:*</exclude>
+            </excludes>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <scope>compile</scope>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>jcr_root/apps/aem-utils-dependencie/install/10</outputDirectory>
+            <includes>
+                <include>com.fasterxml.jackson.core:*:jar:*</include>
+            </includes>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <scope>compile</scope>
+        </dependencySet>
+    </dependencySets>
+
+</assembly>

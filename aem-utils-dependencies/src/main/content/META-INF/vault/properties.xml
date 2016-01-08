@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>M&amp;B AEM - Third Party Libraries</comment>
+<entry key="createdBy">${user.name}</entry>
+<entry key="name">${project.artifactId}</entry>
+<entry key="created">${aem.package.created}</entry>
+<entry key="groupId">${project.groupId}</entry>
+<entry key="version">${project.version}</entry>
+<entry key="requiresRoot">false</entry>
+<entry key="group">${project.groupId}</entry>
+<entry key="description">Third Party Libraries</entry>
+<entry key="artifactId">${project.artifactId}</entry>
+<entry key="path">/etc/packages/${project.groupId}/${project.artifactId}.zip</entry>
+</properties>

@@ -62,6 +62,7 @@
     <modules>
         <module>aem-utils-bundle</module>
         <module>aem-utils-package</module>
+        <module>aem-utils-dependencies</module>
     </modules>
 
     <!-- ====================================================================== -->
@@ -387,6 +388,14 @@
               <artifactId>com.springsource.freemarker</artifactId>
               <version>2.3.18</version>
               <scope>provided</scope>
+              <exclusions>
+                <exclusion>
+                  <artifactId>
+                    com.springsource.org.apache.log4j
+                  </artifactId>
+                  <groupId>org.apache.log4j</groupId>
+                </exclusion>
+              </exclusions>
             </dependency>
 
             <!-- Testing -->
