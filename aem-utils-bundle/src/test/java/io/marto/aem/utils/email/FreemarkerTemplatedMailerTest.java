@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 package io.marto.aem.utils.email;
 
 import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
@@ -125,6 +126,45 @@ public class FreemarkerTemplatedMailerTest extends BaseFreemarkerTest {
 		
 		
 		mailer.sendEmail(recipients, sender, subject, template, model);
+	}
+	
+	
+	@Test(expected = EmailException.class)
+	public void testFromAddressIgnoredWhenNotSet() throws EmailException, IOException, MessagingException {
+		Map<String, Object> model = createModel();
+		
+		String recipients[] = new String[] { "joe@me.com", "jack@test.com" };
+		String subject = "Test Email";
+		String sender = null;
+		String template = "/templates/helloworld.ftl";
+		
+		mailer.sendEmail(recipients, sender, subject, template, model);
+		
+		mailer.clear();
+		
+		HtmlEmail htmlMail = sentEmail.get();
+
+		getEmail(htmlMail);
+	}
+
+	@Test
+	public void testSubjectIgnoredWhenNotSet() throws EmailException, IOException, MessagingException {
+		Map<String, Object> model = createModel();
+		
+		String recipients[] = new String[] { "joe@me.com", "jack@test.com" };
+		String subject = null;
+		String sender = "admin@marto.io";
+		String template = "/templates/helloworld.ftl";
+		
+		mailer.sendEmail(recipients, sender, subject, template, model);
+		
+		mailer.clear();
+		
+		HtmlEmail htmlMail = sentEmail.get();
+
+		String msg = getEmail(htmlMail);
+		
+		assertThat(msg, not(containsString("Subject:")));
 	}
 	
 	@Test(expected = EmailException.class)

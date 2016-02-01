@@ -73,8 +73,12 @@ public class FreemarkerTemplatedMailer {
         final HtmlEmail email = new HtmlEmail();
 
         email.setMsg(renderBody(template, model));
-        email.setSubject(subject);
-        email.setFrom(sender);
+        if (subject != null) {
+        	email.setSubject(subject);
+        }
+        if (sender != null) {
+        	email.setFrom(sender);
+        }
 
         for(String recipient : recipients) {
             email.addTo(recipient);
