@@ -19,6 +19,20 @@
         <name>marto.io</name>
     </organization>
 
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Martin Petrovsky</name>
+            <organization>marto.io</organization>
+        </developer>
+    </developers>
+
     <scm>
         <connection>scm:git:https://github.com/marto/aem-utils.git</connection>
         <developerConnection>scm:git:https://github.com/marto/aem-utils.git</developerConnection>
