@@ -195,7 +195,7 @@
                     <executions>
                         <execution>
                             <id>findbugs-check</id>
-                            <phase>test</phase>
+                            <phase>compile</phase>
                             <goals>
                                 <goal>check</goal>
                             </goals>
