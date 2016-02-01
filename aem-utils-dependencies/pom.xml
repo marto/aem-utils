@@ -84,9 +84,9 @@
     <dependencies>
         <!-- Freemarker templating engine -->
         <dependency>
-          <groupId>org.freemarker</groupId>
-          <artifactId>com.springsource.freemarker</artifactId>
-          <scope>compile</scope>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -162,8 +162,8 @@
 
         <!-- Freemarker templating engine -->
         <dependency>
-          <groupId>org.freemarker</groupId>
-          <artifactId>com.springsource.freemarker</artifactId>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
         </dependency>
 
         <!-- Testing -->

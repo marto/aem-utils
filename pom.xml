@@ -16,7 +16,7 @@
     <inceptionYear>2015</inceptionYear>
 
     <organization>
-        <name>CQ-Centric</name>
+        <name>marto.io</name>
     </organization>
 
     <scm>
@@ -390,18 +390,10 @@
 
             <!-- Freemarker templating engine -->
             <dependency>
-              <groupId>org.freemarker</groupId>
-              <artifactId>com.springsource.freemarker</artifactId>
-              <version>2.3.18</version>
-              <scope>provided</scope>
-              <exclusions>
-                <exclusion>
-                  <artifactId>
-                    com.springsource.org.apache.log4j
-                  </artifactId>
-                  <groupId>org.apache.log4j</groupId>
-                </exclusion>
-              </exclusions>
+                <groupId>org.freemarker</groupId>
+                <artifactId>freemarker</artifactId>
+                <version>2.3.23</version>
+                <scope>provided</scope>
             </dependency>
 
             <!-- Testing -->
