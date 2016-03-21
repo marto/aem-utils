@@ -1,0 +1,22 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+  <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+    <resetJUL>true</resetJUL>
+  </contextListener>
+
+  <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+    <Target>System.out</Target>
+    <encoder>
+      <charset>utf-8</charset>
+      <pattern>%d{HH:mm:ss} %p %c{1}: %m%n</pattern>
+    </encoder>
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <!-- Don't change this to DEBUG and commit it to source control please -->
+      <level>INFO</level>
+    </filter>
+  </appender>
+
+  <root level="INFO">
+    <appender-ref ref="Console"/>
+  </root>
+</configuration>
