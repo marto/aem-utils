@@ -7,7 +7,7 @@
     <!-- ====================================================================== -->
     <groupId>io.marto.aem</groupId>
     <artifactId>aem-utils</artifactId>
-    <version>0.0.5-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>AEM Utils parent POM</name>
@@ -69,8 +69,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <java.version.source>1.7</java.version.source>
-        <java.version.target>1.7</java.version.target>
+        <java.version.source>1.8</java.version.source>
+        <java.version.target>1.8</java.version.target>
     </properties>
 
     <modules>
@@ -89,7 +89,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.3</version>
+                    <version>3.5.1</version>
                     <configuration>
                         <source>${java.version.source}</source>
                         <target>${java.version.target}</target>
@@ -98,12 +98,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.18.1</version>
+                    <version>2.19.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>3.0.1</version>
                     <executions>
                         <execution>
                             <id>attach-sources</id>
@@ -116,7 +116,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.10.3</version>
+                    <version>2.10.4</version>
                     <executions>
                         <execution>
                             <id>attach-javadocs</id>
@@ -129,14 +129,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-scr-plugin</artifactId>
-                    <version>1.19.0</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.slf4j</groupId>
-                            <artifactId>slf4j-simple</artifactId>
-                            <version>1.7.12</version>
-                        </dependency>
-                    </dependencies>
+                    <version>1.22.0</version>
                     <executions>
                         <execution>
                             <id>generate-scr-descriptor</id>
@@ -149,7 +142,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>2.5.3</version>
+                    <version>3.2.0</version>
                     <extensions>true</extensions>
                     <configuration>
                         <instructions>
@@ -160,7 +153,7 @@
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
-                    <version>0.0.24</version>
+                    <version>0.5.1</version>
                     <extensions>true</extensions>
                     <configuration>
                         <failOnError>true</failOnError>
@@ -206,7 +199,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.0.4</version>
                     <executions>
                         <execution>
                             <id>findbugs-check</id>
@@ -228,7 +221,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.1</version>
+                    <version>2.5.3</version>
                     <configuration>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
                         <useReleaseProfile>false</useReleaseProfile>
@@ -275,7 +268,7 @@
                 <plugin>
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.4</version>
+                    <version>1.6.7</version>
                     <extensions>true</extensions>
                     <configuration>
                         <serverId>ossrh</serverId>
@@ -304,13 +297,13 @@
             <dependency>
                 <groupId>org.osgi</groupId>
                 <artifactId>org.osgi.core</artifactId>
-                <version>4.2.0</version>
+                <version>6.0.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.compendium</artifactId>
-                <version>4.2.0</version>
+                <artifactId>osgi.cmpn</artifactId>
+                <version>6.0.0</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -318,13 +311,13 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr</artifactId>
-                <version>1.8.2</version>
+                <version>2.0.4</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.scr.annotations</artifactId>
-                <version>1.9.12</version>
+                <version>1.11.0</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -332,13 +325,13 @@
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.api</artifactId>
-                <version>2.7.0</version>
+                <version>2.11.0</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.commons.osgi</artifactId>
-                <version>2.2.0</version>
+                <version>2.4.0</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -362,17 +355,18 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- Adobe AEM -->
+            <!-- Adobe AEM (6.2) -->
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.models.api</artifactId>
-                <version>1.1.0</version>
+                <version>1.2.2</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>com.adobe.aem</groupId>
-                <artifactId>aem-api</artifactId>
-                <version>6.0.0.1</version>
+                <artifactId>uber-jar</artifactId>
+                <classifier>apis</classifier>
+                <version>6.2.0</version>
                 <scope>provided</scope>
             </dependency>
 
@@ -380,7 +374,7 @@
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
-                <version>1.7.12</version>
+                <version>1.7.6</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
@@ -392,21 +386,15 @@
 
             <!-- Apache -->
             <dependency>
-                <groupId>commons-lang</groupId>
-                <artifactId>commons-lang</artifactId>
-                <version>2.6</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.0.1</version>
+                <version>3.4</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
-                <version>1.9</version>
+                <version>1.10</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>

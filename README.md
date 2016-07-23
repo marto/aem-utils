@@ -18,12 +18,27 @@ It should be noted that when using global vanity paths in a multi-tenanted syste
 
 To use the Vanity URL Filter, simply add the dependancy to your POM and configure the "Vanity URL Filter" component.
 
+For AEM 6.0
+
 ```
   <dependencies>
     <dependency>
       <groupId>io.marto.aem</groupId>
       <artifactId>aem-vanity-filter</artifactId>
       <version>0.0.5</version>
+    </dependency>
+  </dependencies>
+
+```
+
+For AEM 6.2 and onwards
+
+```
+  <dependencies>
+    <dependency>
+      <groupId>io.marto.aem</groupId>
+      <artifactId>aem-vanity-filter</artifactId>
+      <version>0.1.0</version>
     </dependency>
   </dependencies>
 
