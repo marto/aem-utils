@@ -74,6 +74,7 @@
     </properties>
 
     <modules>
+        <module>aem-lib</module>
         <module>aem-utils-bundle</module>
         <module>aem-vanity-filter</module>
         <module>aem-utils-package</module>
@@ -370,6 +371,14 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- https://projectlombok.org/ -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.20</version>
+                <scope>provided</scope>
+            </dependency>
+
             <!-- Slf4j / Logback -->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -438,6 +447,13 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>2.3.23</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>3.0.1</version>
                 <scope>provided</scope>
             </dependency>
 
